@@ -82,7 +82,10 @@ def ping(host, timeout=1):
             print(f"Ping of {host} is:{echoTime:.2f} ms\n The host is online=)")
             return
 
-if __name__ == '__main__':
+def main():
     servers = ["lms.ui.ac.ir", "golestan.ui.ac.ir", "stackoverflow.com","185.237.84.37 ","google.com"]
     for server in servers:
         ping(server)
+        
+if __name__ == '__main__':
+    main()
