@@ -29,3 +29,14 @@ def checksum(source_string):
     result = result & 0xFFFF
     result = result >> 8 | (result << 8 & 0xFF00)
     return result
+def create_packet(ID):
+    #Create an ICMP echo request packet
+    # Dummy header with a 0 checksum
+    """header = struct.pack("bbHHh", icmp_type, icmp_code, checksum, identifier, sequence)"""
+    header = struct.pack("bbHHh", ICMP_ECHO_REQUEST, 0, 0, ID, 1)
+    data = struct.pack("d", time.time())
+    # Calculate the checksum on the header and data
+    packet_checksum = checksum(header + data)
+    # Construct the header again with the correct checksum
+    header = struct.pack("bbHHh", ICMP_ECHO_REQUEST, 0, socket.htons(packet_checksum), ID, 1)
+    return header + data
