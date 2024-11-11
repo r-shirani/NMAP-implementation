@@ -1,4 +1,4 @@
-**Phase 1: Implementing Nmap Software Features**
+**Implementing Nmap Software Features**
 
 Nmap is a highly powerful tool network administrators, security experts, and even hackers use to explore, analyze, and better understand computer networks. The name "Nmap" stands for "Network Mapper." This tool helps users find active devices on a computer network, identify services and applications running on those devices, and even detect security vulnerabilities.
 
